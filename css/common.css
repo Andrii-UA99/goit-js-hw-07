@@ -2,6 +2,24 @@
   box-sizing: border-box;
 }
 
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
 body {
   margin: 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -11,4 +29,28 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  row-gap: 48px;
+  column-gap: 24px;
+  padding: 100px min(10.8%, 156px);
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.gallery-item {
+  max-width: calc((100% - 2 * 24px) / 3);
+  min-width: 225px;
+}
+
+.gallery-item img {
+  aspect-ratio: 360/300;
+  object-fit: cover;
+  object-position: center;
 }

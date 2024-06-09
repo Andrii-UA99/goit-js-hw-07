@@ -26,13 +26,6 @@ const images = [
 ];
 
 const galleryList = document.querySelector('.gallery');
-images.forEach((image) => {
-  const listItem = document.createElement('li');
-  const imgElem = document.createElement('img');
-  imgElem.src = image.url;
-  imgElem.alt = image.alt;
-  listItem.appendChild(imgElem);
-  galleryList.appendChild(listItem);
-});
+const markupImages = images.map(image => `<li class='gallery-item'><img src="${image.url}" alt="${image.alt}" /></li>`).join('');
 
-galleryList.classList.add('flex-box-gallery');
+galleryList.insertAdjacentHTML('beforeend', markupImages);
