@@ -22,6 +22,13 @@ function createBoxes(amount) {
   containerBoxes.appendChild(fragment);
 }
 
+function destroySqueres() {
+  const squeres = containerBoxes.querySelectorAll('div');
+  squeres.forEach(element => {
+    element.remove();
+  });
+}
+
 createButton.addEventListener('click', () => {
   const amount = Number(elementInput.value);
   if (amount >= 1 && amount <= 100) {
@@ -31,5 +38,5 @@ createButton.addEventListener('click', () => {
 });
 
 destroyButton.addEventListener('click', () => {
-  containerBoxes.innerHTML = '';
+  destroySqueres();
 });
